@@ -51,7 +51,8 @@ pipeline {
             }
             agent none
             steps {
-                input message: 'Deploy to Test?'
+                sh "chmod +x deploy.sh"
+                sh "./deploy.sh test $TAG_NAME"
             }            
         }
 
